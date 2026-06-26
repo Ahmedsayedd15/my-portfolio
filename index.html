@@ -12,9 +12,11 @@
 
 <body>
 
+<!-- NAVBAR -->
 <nav class="navbar">
     <div class="nav-container">
-        <a href="#" class="logo">Ahmed<span>.Data</span></a>
+
+        <a href="#" class="logo">AS<span>.data</span></a>
 
         <ul class="nav-links">
             <li><a href="#about">About</a></li>
@@ -25,13 +27,19 @@
             <li><a href="#contact" class="btn-sm">Contact</a></li>
         </ul>
 
+        <button id="theme-toggle" class="btn-sm">
+            <i class="fa-solid fa-moon"></i>
+        </button>
+
         <div class="menu-toggle" id="mobile-menu">
             <i class="fa-solid fa-bars"></i>
         </div>
+
     </div>
 </nav>
 
-<header class="hero">
+<!-- HERO -->
+<header class="hero" id="home">
     <div class="hero-container">
 
         <div class="hero-text">
@@ -41,16 +49,13 @@
             <h2>Data Analyst</h2>
 
             <p>
-                Data Analyst passionate about transforming raw data into meaningful insights.
-                Skilled in SQL, Excel, Python, and Power BI with strong focus on data cleaning,
-                visualization, and business reporting.
+                Data Analyst skilled in SQL, Python, Excel, and Power BI.
+                Focused on turning raw data into actionable business insights.
             </p>
 
             <div class="hero-cta">
                 <a href="#projects" class="btn btn-primary">View Projects</a>
-                <a href="cv.pdf" class="btn btn-secondary">
-                    <i class="fa-solid fa-download"></i> Download CV
-                </a>
+                <a href="#" class="btn btn-secondary">Download CV</a>
             </div>
         </div>
 
@@ -58,104 +63,65 @@
 </header>
 
 <!-- ABOUT -->
-<section id="about" class="section-padding">
+<section id="about" class="section-padding reveal">
     <div class="container">
         <h2 class="section-title">About Me</h2>
-
         <p>
-            I am a Data Analyst with strong interest in turning data into actionable insights.
-            I specialize in data cleaning, exploratory data analysis (EDA), and dashboard creation.
-        </p>
-
-        <p>
-            Currently expanding my skills into Data Science and Machine Learning to build predictive models
-            and advanced analytics solutions.
+            I am a Data Analyst passionate about analyzing data, building dashboards,
+            and discovering insights that help decision making.
         </p>
     </div>
 </section>
 
 <!-- SKILLS -->
-<section id="skills" class="section-padding">
+<section id="skills" class="section-padding reveal">
     <div class="container">
         <h2 class="section-title">Skills</h2>
 
         <div class="skills-grid">
 
-            <div class="skill-card">
-                <i class="fa-solid fa-database"></i>
-                <h3>SQL</h3>
-                <p>Data querying, joins, aggregation, and database analysis.</p>
-            </div>
-
-            <div class="skill-card">
-                <i class="fa-brands fa-python"></i>
-                <h3>Python</h3>
-                <p>Pandas, NumPy, Matplotlib for data analysis and visualization.</p>
-            </div>
-
-            <div class="skill-card">
-                <i class="fa-solid fa-chart-pie"></i>
-                <h3>Power BI</h3>
-                <p>Interactive dashboards and DAX calculations.</p>
-            </div>
-
-            <div class="skill-card">
-                <i class="fa-solid fa-file-excel"></i>
-                <h3>Excel</h3>
-                <p>Pivot tables, formulas, and data cleaning.</p>
-            </div>
+            <div class="skill-card"><i class="fa-solid fa-database"></i><h3>SQL</h3></div>
+            <div class="skill-card"><i class="fa-brands fa-python"></i><h3>Python</h3></div>
+            <div class="skill-card"><i class="fa-solid fa-chart-pie"></i><h3>Power BI</h3></div>
+            <div class="skill-card"><i class="fa-solid fa-file-excel"></i><h3>Excel</h3></div>
 
         </div>
     </div>
 </section>
 
 <!-- PROJECTS -->
-<section id="projects" class="section-padding">
+<section id="projects" class="section-padding reveal">
     <div class="container">
+
         <h2 class="section-title">Projects</h2>
 
         <div class="project-card">
-            <h3>Sales Data Analysis Dashboard</h3>
-
-            <p><b>Tools:</b> Excel, Power BI</p>
-            <p>
-                Built an interactive dashboard to analyze sales performance,
-                identify trends, and track KPIs across regions.
-            </p>
+            <h3>Sales Dashboard Analysis</h3>
+            <p>Power BI dashboard analyzing sales performance and KPIs.</p>
         </div>
 
         <div class="project-card">
             <h3>Customer Churn Analysis</h3>
-
-            <p><b>Tools:</b> Python, SQL</p>
-            <p>
-                Analyzed customer behavior to identify churn patterns and
-                improve retention strategies.
-            </p>
+            <p>Python + SQL project to analyze customer retention.</p>
         </div>
 
     </div>
 </section>
 
 <!-- CERTIFICATES -->
-<section id="certificates" class="section-padding">
+<section id="certificates" class="section-padding reveal">
     <div class="container">
         <h2 class="section-title">Certificates</h2>
-
-        <p>• Google Data Analytics Certificate</p>
-        <p>• Power BI (Microsoft PL-300)</p>
-
+        <p>Google Data Analytics</p>
+        <p>Power BI PL-300</p>
     </div>
 </section>
 
 <!-- EDUCATION -->
-<section id="education" class="section-padding">
+<section id="education" class="section-padding reveal">
     <div class="container">
         <h2 class="section-title">Education</h2>
-
-        <p><b>Bachelor of Business Information Systems</b></p>
-        <p>Graduated 2025</p>
-
+        <p>Bachelor of Business Information Systems (2025)</p>
     </div>
 </section>
 
@@ -163,11 +129,11 @@
 <footer id="contact" class="section-padding">
     <div class="container">
 
-        <h2>Contact Me</h2>
+        <h2>Contact</h2>
 
-        <p>Email: ahmed.sayed@example.com</p>
-        <p>LinkedIn: https://linkedin.com/in/your-profile</p>
-        <p>GitHub: https://github.com/your-username</p>
+        <p>Email: ahmed@example.com</p>
+        <p>GitHub: github.com/username</p>
+        <p>LinkedIn: linkedin.com/in/profile</p>
 
         <p>© 2026 Ahmed Sayed</p>
 
