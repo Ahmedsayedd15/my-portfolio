@@ -7,21 +7,24 @@ document.addEventListener('DOMContentLoaded', () => {
     if (mobileMenu && navLinks) {
         mobileMenu.addEventListener('click', () => {
             navLinks.classList.toggle('active');
-            // Toggle hamburger icon appearance
+
             const icon = mobileMenu.querySelector('i');
-            if(icon.classList.contains('fa-bars')) {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-xmark');
-            } else {
-                icon.classList.remove('fa-xmark');
-                icon.classList.add('fa-bars');
+            if (icon) {
+                if (icon.classList.contains('fa-bars')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-xmark');
+                } else {
+                    icon.classList.remove('fa-xmark');
+                    icon.classList.add('fa-bars');
+                }
             }
         });
 
-        // Close navigation menu instantly when clicking any link
+        // Close menu when clicking any link
         navLinks.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
+
                 const icon = mobileMenu.querySelector('i');
                 if (icon) {
                     icon.classList.remove('fa-xmark');
@@ -41,17 +44,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (targetDetails) {
                 targetDetails.classList.toggle('expanded');
-                
-                if (targetDetails.classList.contains('expanded')) {
-                    button.textContent = 'Hide Details';
-                } else {
-                    button.textContent = 'View Details';
-                }
+
+                button.textContent = targetDetails.classList.contains('expanded')
+                    ? 'Hide Details'
+                    : 'View Details';
             }
         });
     });
 
-    // --- On-Scroll Reveal Structural Framework ---
+    // --- On-Scroll Reveal (Optimized) ---
     const revealElements = document.querySelectorAll('.reveal');
 
     const revealOnScroll = () => {
@@ -64,9 +65,29 @@ document.addEventListener('DOMContentLoaded', () => {
                 el.classList.add('active');
             }
         });
+
+        // Stop listening if all elements are visible (performance boost)
+        if ([...revealElements].every(el => el.classList.contains('active'))) {
+            window.removeEventListener('scroll', onScrollHandler);
+        }
     };
 
-    window.addEventListener('scroll', revealOnScroll);
-    // Trigger once on initial instantiation to load structural elements within frame view
+    // Throttled scroll handler (better performance on mobile)
+    let scrollTicking = false;
+
+    const onScrollHandler = () => {
+        if (!scrollTicking) {
+            window.requestAnimationFrame(() => {
+                revealOnScroll();
+                scrollTicking = false;
+            });
+            scrollTicking = true;
+        }
+    };
+
+    window.addEventListener('scroll', onScrollHandler);
+
+    // Initial trigger
     revealOnScroll();
+
 });
