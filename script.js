@@ -1,26 +1,27 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // =========================
-    // MOBILE NAVIGATION
-    // =========================
+    // --- Mobile Navigation Toggle ---
     const mobileMenu = document.getElementById('mobile-menu');
     const navLinks = document.querySelector('.nav-links');
 
     if (mobileMenu && navLinks) {
         mobileMenu.addEventListener('click', () => {
             navLinks.classList.toggle('active');
-
+            // Toggle hamburger icon appearance
             const icon = mobileMenu.querySelector('i');
-            if (icon) {
-                icon.classList.toggle('fa-bars');
-                icon.classList.toggle('fa-xmark');
+            if(icon.classList.contains('fa-bars')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+            } else {
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
             }
         });
 
+        // Close navigation menu instantly when clicking any link
         navLinks.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
-
                 const icon = mobileMenu.querySelector('i');
                 if (icon) {
                     icon.classList.remove('fa-xmark');
@@ -30,9 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // =========================
-    // PROJECT DETAILS TOGGLE
-    // =========================
+    // --- Expandable Project Details System ---
     const toggleButtons = document.querySelectorAll('.toggle-details-btn');
 
     toggleButtons.forEach(button => {
@@ -42,103 +41,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (targetDetails) {
                 targetDetails.classList.toggle('expanded');
-
-                button.textContent = targetDetails.classList.contains('expanded')
-                    ? 'Hide Details'
-                    : 'View Details';
+                
+                if (targetDetails.classList.contains('expanded')) {
+                    button.textContent = 'Hide Details';
+                } else {
+                    button.textContent = 'View Details';
+                }
             }
         });
     });
 
-    // =========================
-    // SCROLL REVEAL (OPTIMIZED)
-    // =========================
+    // --- On-Scroll Reveal Structural Framework ---
     const revealElements = document.querySelectorAll('.reveal');
 
     const revealOnScroll = () => {
         const triggerBottom = (window.innerHeight / 5) * 4;
 
         revealElements.forEach(el => {
-            if (el.getBoundingClientRect().top < triggerBottom) {
+            const elTop = el.getBoundingClientRect().top;
+
+            if (elTop < triggerBottom) {
                 el.classList.add('active');
             }
         });
     };
 
-    let revealTicking = false;
-
-    const scrollHandler = () => {
-        if (!revealTicking) {
-            window.requestAnimationFrame(() => {
-                revealOnScroll();
-                revealTicking = false;
-            });
-            revealTicking = true;
-        }
-    };
-
-    window.addEventListener('scroll', scrollHandler);
+    window.addEventListener('scroll', revealOnScroll);
+    // Trigger once on initial instantiation to load structural elements within frame view
     revealOnScroll();
-
-    // =========================
-    // ACTIVE NAV LINK (SCROLL SPY) - FIXED & OPTIMIZED
-    // =========================
-    const sections = document.querySelectorAll("section[id], header[id], footer[id]");
-    const navItems = document.querySelectorAll(".nav-links a");
-
-    let scrollTicking = false;
-
-    window.addEventListener("scroll", () => {
-        if (!scrollTicking) {
-            window.requestAnimationFrame(() => {
-
-                let current = "";
-
-                sections.forEach(section => {
-                    const sectionTop = section.offsetTop - 120;
-
-                    if (scrollY >= sectionTop) {
-                        current = section.getAttribute("id");
-                    }
-                });
-
-                navItems.forEach(link => {
-                    link.classList.remove("active-link");
-
-                    if (link.getAttribute("href") === "#" + current) {
-                        link.classList.add("active-link");
-                    }
-                });
-
-                scrollTicking = false;
-            });
-
-            scrollTicking = true;
-        }
-    });
-
-    // =========================
-    // SMOOTH THEME TOGGLE (LIGHT/DARK)
-    // =========================
-    const themeToggle = document.getElementById('theme-toggle');
-    const body = document.body;
-
-    if (themeToggle) {
-        themeToggle.addEventListener('click', () => {
-            body.classList.toggle('light-mode');
-
-            const icon = themeToggle.querySelector('i');
-
-            if (icon) {
-                if (body.classList.contains('light-mode')) {
-                    icon.classList.remove('fa-moon');
-                    icon.classList.add('fa-sun');
-                } else {
-                    icon.classList.remove('fa-sun');
-                    icon.classList.add('fa-moon');
-                }
-            }
-        });
-    }
-
 });
