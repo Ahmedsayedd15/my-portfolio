@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Ahmed Portfolio Admin</title>
+<link rel="stylesheet" href="admin.css">
+</head>
+<body>
+<div class="admin-container">
+<div id="login-box">
+<h1>
+Admin Login
+</h1>
+<input 
+id="email"
+placeholder="Email"
+>
+<input 
+id="password"
+type="password"
+placeholder="Password"
+>
+<button id="loginBtn">
+Login
+</button>
+</div>
+<div id="panel" style="display:none;">
+<h1>
+Ahmed Portfolio Admin
+</h1>
+<h2>
+    <h2>
+        Add Skill
+        </h2>
+        <input id="skillName" placeholder="Skill Name">
+        <input id="skillIcon" placeholder="Icon Class">
+        <button id="addSkill">
+        Add Skill
+        </button>
+        <button id="updateSkill" style="display:none;">
+        Update Skill
+        </button>
+        <div id="skills-list"></div>
+<hr>
+<h2>
+Add Project
+</h2>
+<input id="projectTitle" placeholder="Project Title">
+<input id="projectCategory" placeholder="Category">
+<input id="projectIcon" placeholder="Icon Class">
+<textarea id="projectDescription"
+placeholder="Description"></textarea>
+<input id="projectTools"
+placeholder="Tools">
+<input id="projectGithub"
+placeholder="Github Link">
+<button id="addProject">
+    Add Project
+    </button>
+    <button id="updateProject" style="display:none;">
+    Update Project
+    </button>
+<div id="projects-list"></div>
+<hr>
+<h2>
+Add Experience
+</h2>
+<input id="expDate" placeholder="Date">
+<input id="expTitle" placeholder="Job Title">
+<input id="expCompany" placeholder="Company">
+<input id="expIcon" placeholder="Icon">
+<textarea id="expDescription"
+placeholder="Description"></textarea>
+<button id="addExperience">
+    Add Experience
+    </button>
+    <button id="updateExperience" style="display:none;">
+    Update Experience
+    </button>
+<div id="experience-list"></div>
+</div>
+</div>
+<script type="module" src="admin.js"></script>
+</body>
+</html>
