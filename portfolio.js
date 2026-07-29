@@ -118,7 +118,7 @@ if (form) {
     form.addEventListener("submit", function (e) {
         e.preventDefault();
         emailjs.sendForm(
-            "service_2cgsnwd",
+            "service_u0d0jke",
             "template_d93xunx",
             this,
             {
