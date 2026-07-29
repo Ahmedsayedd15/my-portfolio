@@ -129,9 +129,11 @@ if (form) {
             alert("Message sent successfully!");
             form.reset();
         })
-        .catch((error) => {
-            alert("Failed to send message.");
-            console.error(error);
-        });
+       .catch((error) => {
+    console.log("Status:", error.status);
+    console.log("Text:", error.text);
+    console.log(error);
+    alert(`Status: ${error.status}\n${error.text}`);
+});
     });
 }
