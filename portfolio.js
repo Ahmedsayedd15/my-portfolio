@@ -113,3 +113,25 @@ container.innerHTML = html;
 loadSkills();
 loadProjects();
 loadExperience();
+const form = document.getElementById("contact-form");
+if (form) {
+    emailjs.init({
+        publicKey: "LOV5aSgipElUvF_k2",
+    });
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        emailjs.sendForm(
+            "service_2cgsnwd",
+            "template_d93xunx",
+            this
+        )
+        .then(() => {
+            alert("Message sent successfully!");
+            form.reset();
+        })
+        .catch((error) => {
+            alert("Failed to send message.");
+            console.error(error);
+        });
+    });
+}

@@ -229,11 +229,10 @@
     </div>
     </a>
     </div>
-    <form class="contact-form">
-    <input type="text" placeholder="Your Name">
-    <input type="email" placeholder="Your Email">
-    <textarea rows="5"
-    placeholder="Your Message"></textarea>
+    <form class="contact-form" id="contact-form">
+    <input type="text" name="from_name" placeholder="Your Name" required>
+    <input type="email" name="from_email" placeholder="Your Email" required>
+    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
     <button class="btn btn-primary">
     Send Message →
     </button>
@@ -319,6 +318,7 @@ scale(1)
             dot.style.top = e.clientY + "px";
         });
         </script>
+        <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
         <script type="module" src="portfolio.js"></script>
         <script type="module" src="dashboard.js"></script>
 </body>
