@@ -115,25 +115,26 @@ loadProjects();
 loadExperience();
 const form = document.getElementById("contact-form");
 if (form) {
-    emailjs.init({
-        publicKey: "LOV5aSgipElUvF_k2",
-    });
     form.addEventListener("submit", function (e) {
         e.preventDefault();
         emailjs.sendForm(
             "service_2cgsnwd",
             "template_d93xunx",
-            this
+            this,
+            {
+                publicKey: "LOV5aSgipElUvF_k2",
+            }
         )
         .then(() => {
             alert("Message sent successfully!");
             form.reset();
         })
-      .catch((error) => {
-    console.log("FULL ERROR:", error);
-    console.log("Status:", error.status);
-    console.log("Text:", error.text);
-    alert(`Status: ${error.status}\nText: ${error.text}`);
-});
+        .catch((error) => {
+            console.log("FULL ERROR:", error);
+            console.log("Status:", error.status);
+            console.log("Text:", error.text);
+
+            alert(`Status: ${error.status}\nText: ${error.text}`);
+        });
     });
 }
