@@ -117,3 +117,23 @@ hr{
         padding:10px;
     }
 }
+/* Form Buttons */
+#addSkill,
+#updateSkill,
+#cancelSkillEdit,
+#addProject,
+#updateProject,
+#cancelProjectEdit,
+#addExperience,
+#updateExperience,
+#cancelExperienceEdit,
+#logoutBtn {
+    display: inline-block;
+    margin: 10px 8px 10px 0;
+}
+#cancelSkillEdit,
+#cancelProjectEdit,
+#cancelExperienceEdit {
+    background: #374151;
+    color: #fff;
+}
