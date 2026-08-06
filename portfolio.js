@@ -31,45 +31,44 @@ container.innerHTML = html;
 // =================
 // PROJECTS
 // =================
+// =================
+// PROJECTS (Home - Featured Only)
+// =================
 async function loadProjects(){
-const container = document.querySelector("#projects-container");
-if(!container) return;
-const q = query(
-collection(db,"projects"),
-orderBy("order","asc")
-);
-const snapshot = await getDocs(q);
-let html="";
-snapshot.forEach(doc=>{
-let p = doc.data();
-html += `
+    const container = document.querySelector("#projects-container");
+    if(!container) return;
+    const q = query(
+        collection(db,"projects"),
+        orderBy("order","asc")
+    );
+    const snapshot = await getDocs(q);
+    let all = [];
+    snapshot.forEach(doc => all.push(doc.data()));
+    // لو فيه مشاريع متعلّمة featured استخدمها، لو مفيش خد أول 6
+    let featured = all.filter(p => p.featured === true);
+    if(featured.length === 0){
+        featured = all.slice(0, 6);
+    }
+    let html="";
+    featured.forEach(p=>{
+        html += `
 <div class="project-card">
     <div class="project-top">
         <div>
-            <span class="project-category">
-                ${p.category}
-            </span>
-            <h3>
-                ${p.title}
-            </h3>
+            <span class="project-category">${p.category}</span>
+            <h3>${p.title}</h3>
         </div>
         <i class="${p.icon} project-icon"></i>
     </div>
-    <p>
-        ${p.description}
-    </p>
+    <p>${p.description}</p>
     <div class="project-footer">
-        <span>
-            ${p.tools}
-        </span>
-        <a href="${p.github}" target="_blank" class="github-btn">
-            GitHub
-        </a>
+        <span>${p.tools}</span>
+        <a href="${p.github}" target="_blank" class="github-btn">GitHub</a>
     </div>
 </div>
 `;
-});
-container.innerHTML = html;
+    });
+    container.innerHTML = html;
 }
 // =================
 // EXPERIENCE
@@ -133,7 +132,6 @@ if (form) {
             console.log("FULL ERROR:", error);
             console.log("Status:", error.status);
             console.log("Text:", error.text);
-
             alert(`Status: ${error.status}\nText: ${error.text}`);
         });
     });
