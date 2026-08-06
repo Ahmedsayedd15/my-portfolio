@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahmed Portfolio Admin</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+<div class="admin-container">
+    <!-- Login -->
+    <div id="login-box">
+        <h1>Admin Login</h1>
+        <input
+            id="email"
+            type="email"
+            placeholder="Email"
+            autocomplete="username"
+            required>
+        <input
+            id="password"
+            type="password"
+            placeholder="Password"
+            autocomplete="current-password"
+            required>
+        <button
+            type="button"
+            id="loginBtn">
+            Login
+        </button>
+    </div>
+    <!-- Admin Panel -->
+    <div
+        id="panel"
+        style="display:none;">
+        <h1>Ahmed Portfolio Admin</h1>
+        <button
+            type="button"
+            id="logoutBtn">
+            Logout
+        </button>
+        <hr>
+        <!-- ================= SKILLS ================= -->
+        <h2>Add Skill</h2>
+        <input
+            id="skillName"
+            placeholder="Skill Name">
+        <input
+            id="skillIcon"
+            placeholder="Icon Class">
+        <input
+            id="skillOrder"
+            type="number"
+            min="1"
+            placeholder="Display Order">
+        <div class="action-buttons">
+            <button
+                type="button"
+                id="addSkill">
+                Add Skill
+            </button>
+            <button
+                type="button"
+                id="updateSkill"
+                style="display:none;">
+                Update Skill
+            </button>
+        </div>
+        <div id="skills-list"></div>
+        <hr>
+        <!-- ================= PROJECTS ================= -->
+        <h2>Add Project</h2>
+        <input
+            id="projectTitle"
+            placeholder="Project Title">
+        <input
+            id="projectCategory"
+            placeholder="Category">
+        <input
+            id="projectIcon"
+            placeholder="Icon Class">
+        <textarea
+            id="projectDescription"
+            placeholder="Description"></textarea>
+        <input
+            id="projectTools"
+            placeholder="Tools">
+        <input
+            id="projectGithub"
+            placeholder="Github Link">
+        <input
+            id="projectOrder"
+            type="number"
+            min="1"
+            placeholder="Display Order">
+        <div class="action-buttons">
+            <button
+                type="button"
+                id="addProject">
+                Add Project
+            </button>
+            <button
+                type="button"
+                id="updateProject"
+                style="display:none;">
+                Update Project
+            </button>
+        </div>
+        <div id="projects-list"></div>
+        <hr>
+                <!-- ================= EXPERIENCE ================= -->
+        <h2>Add Experience</h2>
+        <input
+            id="expDate"
+            placeholder="Date">
+        <input
+            id="expTitle"
+            placeholder="Job Title">
+        <input
+            id="expCompany"
+            placeholder="Company">
+        <input
+            id="expIcon"
+            placeholder="Icon">
+        <textarea
+            id="expDescription"
+            placeholder="Description"></textarea>
+        <input
+            id="expOrder"
+            type="number"
+            min="1"
+            placeholder="Display Order">
+        <div class="action-buttons">
+            <button
+                type="button"
+                id="addExperience">
+                Add Experience
+            </button>
+            <button
+                type="button"
+                id="updateExperience"
+                style="display:none;">
+                Update Experience
+            </button>
+        </div>
+        <div id="experience-list"></div>
+        <hr>
+        <button
+            type="button"
+            id="cancelEdit"
+            style="display:none;">
+            Cancel
+        </button>
+    </div>
+</div>
+<script type="module" src="admin.js"></script>
+</body>
+</html>

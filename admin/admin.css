@@ -1,0 +1,139 @@
+*{
+    box-sizing:border-box;
+}
+body{
+    background:#050811;
+    color:white;
+    font-family:Inter,Arial,sans-serif;
+}
+/* Main Container */
+.admin-container{
+    box-shadow:0 20px 50px rgba(0,0,0,.4);
+    width:90%;
+    max-width:600px;
+    margin:50px auto;
+    background:#0b1120;
+    padding:30px;
+    border-radius:20px;
+}
+/* Inputs */
+input,
+textarea{
+    width:100%;
+    margin:10px 0;
+    padding:12px;
+    background:#111827;
+    border:1px solid #333;
+    color:white;
+    border-radius:10px;
+    font-size:14px;
+}
+input:focus,
+textarea:focus{
+    outline:none;
+    border-color:#38bdf8;
+    box-shadow:0 0 10px rgba(56,189,248,0.25);
+}
+textarea{
+    resize:vertical;
+    min-height:120px;
+}
+/* Buttons */
+button{
+    padding:12px 20px;
+    background:#38bdf8;
+    color:#02040a;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:bold;
+    transition:.3s;
+}
+button:hover{
+    transform:translateY(-2px);
+    opacity:.85;
+}
+/* Divider */
+hr{
+    margin:30px 0;
+    border:0;
+    border-top:1px solid #1f2937;
+}
+/* Admin Card */
+.admin-card{
+    background:#111827;
+    padding:15px;
+    margin:10px 0;
+    border-radius:12px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,.25);
+}
+/* Card Content */
+.admin-card .content{
+    flex:1;
+    overflow:hidden;
+}
+/* Buttons Container */
+.admin-card .actions{
+    display:flex;
+    gap:10px;
+    align-items:center;
+    margin-left:auto;
+}
+/* Card Buttons */
+.admin-card button{
+    margin:0;
+    min-width:80px;
+}
+/* Delete Button */
+.admin-card button.delete{
+    background:#ef4444;
+    color:white;
+}
+/* Mobile */
+@media(max-width:600px){
+    .admin-container{
+        width:95%;
+        padding:20px;
+        margin:25px auto;
+    }
+    .admin-card{
+        flex-direction:column;
+        align-items:stretch;
+        gap:15px;
+    }
+    .admin-card .content{
+        width:100%;
+    }
+    .admin-card .actions{
+        width:100%;
+        justify-content:space-between;
+    }
+    .admin-card button{
+        flex:1;
+        padding:10px;
+    }
+}
+/* Form Buttons */
+#addSkill,
+#updateSkill,
+#cancelSkillEdit,
+#addProject,
+#updateProject,
+#cancelProjectEdit,
+#addExperience,
+#updateExperience,
+#cancelExperienceEdit,
+#logoutBtn {
+    display: inline-block;
+    margin: 10px 8px 10px 0;
+}
+#cancelSkillEdit,
+#cancelProjectEdit,
+#cancelExperienceEdit {
+    background: #374151;
+    color: #fff;
+}
