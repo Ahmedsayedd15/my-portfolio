@@ -34,4 +34,31 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     window.addEventListener('scroll', revealOnScroll);
     revealOnScroll();
+    // --- Scroll Progress Bar ---
+    const progressBar = document.querySelector('.scroll-progress');
+    const updateProgress = () => {
+        if (!progressBar) return;
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const percent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+        progressBar.style.width = percent + '%';
+    };
+    window.addEventListener('scroll', updateProgress);
+    updateProgress();
+    // --- Active Nav Link on Scroll ---
+    const navAnchors = document.querySelectorAll('.nav-links a[href*="#"]:not(.btn-sm)');
+    const observedSections = document.querySelectorAll('section[id]');
+    if (observedSections.length && navAnchors.length) {
+        const sectionObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute('id');
+                    navAnchors.forEach(a => {
+                        a.classList.toggle('active', a.getAttribute('href').endsWith('#' + id));
+                    });
+                }
+            });
+        }, { rootMargin: '-50% 0px -50% 0px' });
+        observedSections.forEach(sec => sectionObserver.observe(sec));
+    }
 });
