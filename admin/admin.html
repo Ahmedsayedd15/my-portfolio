@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahmed Portfolio Admin</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+<div class="admin-container">
+    <!-- Login -->
+    <div id="login-box">
+        <div class="login-icon"><i class="fa-solid fa-lock"></i></div>
+        <h1>Admin Login</h1>
+        <input
+            id="email"
+            type="email"
+            placeholder="Email"
+            autocomplete="username"
+            required>
+        <input
+            id="password"
+            type="password"
+            placeholder="Password"
+            autocomplete="current-password"
+            required>
+        <button
+            type="button"
+            id="loginBtn">
+            Login
+        </button>
+    </div>
+    <!-- Admin Panel -->
+    <div
+        id="panel"
+        style="display:none;">
+        <div class="admin-header">
+            <h1><span class="logo-dot">&lt;/&gt;</span> Ahmed Portfolio Admin</h1>
+            <button
+                type="button"
+                id="logoutBtn"
+                class="logout-btn">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i> Logout
+            </button>
+        </div>
+        <!-- ================= SKILLS ================= -->
+        <section class="admin-panel">
+            <div class="panel-title">
+                <i class="fa-solid fa-bolt"></i>
+                <h2>Skills</h2>
+            </div>
+            <div class="form-grid">
+                <input
+                    id="skillName"
+                    placeholder="Skill Name">
+                <input
+                    id="skillIcon"
+                    placeholder="Icon Class">
+                <input
+                    id="skillOrder"
+                    type="number"
+                    min="1"
+                    placeholder="Display Order">
+            </div>
+            <div class="action-buttons">
+                <button
+                    type="button"
+                    id="addSkill">
+                    <i class="fa-solid fa-plus"></i> Add Skill
+                </button>
+                <button
+                    type="button"
+                    id="updateSkill"
+                    style="display:none;">
+                    <i class="fa-solid fa-check"></i> Update Skill
+                </button>
+            </div>
+            <div id="skills-list" class="items-list"></div>
+        </section>
+        <!-- ================= PROJECTS ================= -->
+        <section class="admin-panel">
+            <div class="panel-title">
+                <i class="fa-solid fa-diagram-project"></i>
+                <h2>Projects</h2>
+            </div>
+            <div class="form-grid">
+                <input
+                    id="projectTitle"
+                    placeholder="Project Title">
+                <input
+                    id="projectCategory"
+                    placeholder="Category">
+                <input
+                    id="projectIcon"
+                    placeholder="Icon Class">
+                <input
+                    id="projectTools"
+                    placeholder="Tools">
+                <input
+                    id="projectGithub"
+                    placeholder="Github Link">
+                <input
+                    id="projectOrder"
+                    type="number"
+                    min="1"
+                    placeholder="Display Order">
+            </div>
+            <textarea
+                id="projectDescription"
+                placeholder="Description"></textarea>
+            <div class="action-buttons">
+                <button
+                    type="button"
+                    id="addProject">
+                    <i class="fa-solid fa-plus"></i> Add Project
+                </button>
+                <button
+                    type="button"
+                    id="updateProject"
+                    style="display:none;">
+                    <i class="fa-solid fa-check"></i> Update Project
+                </button>
+            </div>
+            <div id="projects-list" class="items-list"></div>
+        </section>
+        <!-- ================= EXPERIENCE ================= -->
+        <section class="admin-panel">
+            <div class="panel-title">
+                <i class="fa-solid fa-briefcase"></i>
+                <h2>Experience</h2>
+            </div>
+            <div class="form-grid">
+                <input
+                    id="expDate"
+                    placeholder="Date">
+                <input
+                    id="expTitle"
+                    placeholder="Job Title">
+                <input
+                    id="expCompany"
+                    placeholder="Company">
+                <input
+                    id="expIcon"
+                    placeholder="Icon">
+                <input
+                    id="expOrder"
+                    type="number"
+                    min="1"
+                    placeholder="Display Order">
+            </div>
+            <textarea
+                id="expDescription"
+                placeholder="Description"></textarea>
+            <div class="action-buttons">
+                <button
+                    type="button"
+                    id="addExperience">
+                    <i class="fa-solid fa-plus"></i> Add Experience
+                </button>
+                <button
+                    type="button"
+                    id="updateExperience"
+                    style="display:none;">
+                    <i class="fa-solid fa-check"></i> Update Experience
+                </button>
+            </div>
+            <div id="experience-list" class="items-list"></div>
+        </section>
+        <button
+            type="button"
+            id="cancelEdit"
+            class="cancel-btn"
+            style="display:none;">
+            <i class="fa-solid fa-xmark"></i> Cancel
+        </button>
+    </div>
+</div>
+<script type="module" src="admin.js"></script>
+</body>
+</html>
