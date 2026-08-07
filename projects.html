@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Projects | Ahmed Sayed</title>
+    <meta name="description" content="Browse all of Ahmed Sayed's data analytics, SQL, networking, and web development projects.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📊</text></svg>">
+</head>
+<body>
+<div class="scroll-progress"></div>
+<div class="cursor"></div>
+<div class="cursor-dot"></div>
+<!-- ================= NAVBAR ================= -->
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="index.html" class="logo">
+            <span class="logo-dot">&lt;/&gt;</span>
+            Ahmed.Sayed
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#skills">Skills</a></li>
+            <li><a href="projects.html" class="active">Projects</a></li>
+            <li><a href="index.html#experience">Experience</a></li>
+            <li><a href="index.html#contact" class="btn-sm">Contact</a></li>
+        </ul>
+        <button id="mobile-menu" class="mobile-menu-btn" aria-label="Toggle menu">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+    </div>
+</nav>
+<!-- ================= HEADER ================= -->
+<header class="projects-page-header">
+    <div class="container">
+        <a href="index.html" class="back-home">
+            <i class="fa-solid fa-arrow-left"></i>
+            <span>Back</span>
+        </a>
+        <h1 class="main-heading">
+            All <span>Projects</span>
+        </h1>
+        <p class="hero-subtitle">
+            A collection of real-world projects built using SQL, Power BI,
+            Python, Networking, and Web Development.
+        </p>
+    </div>
+</header>
+<!-- ================= SEARCH ================= -->
+<section class="section-padding reveal" style="padding-top:40px;">
+    <div class="container">
+        <div class="search-filter-bar">
+            <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input
+                    type="text"
+                    id="project-search"
+                    placeholder="Search projects..."
+                >
+            </div>
+            <div
+                class="filter-buttons"
+                id="filter-buttons">
+            </div>
+        </div>
+        <div
+            class="projects-grid projects-grid-full"
+            id="all-projects-container">
+            <div class="skeleton skeleton-card"></div>
+            <div class="skeleton skeleton-card"></div>
+            <div class="skeleton skeleton-card"></div>
+            <div class="skeleton skeleton-card"></div>
+        </div>
+        <p
+            class="no-results"
+            id="no-results"
+            style="display:none;">
+            No projects found.
+        </p>
+    </div>
+</section>
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+    <p>
+        Built with ❤️ by Ahmed Sayed · Data Analyst · Cairo, Egypt
+    </p>
+</footer>
+<!-- ================= CURSOR ================= -->
+<script>
+const cursor=document.querySelector(".cursor");
+const dot=document.querySelector(".cursor-dot");
+document.addEventListener("mousemove",(e)=>{
+cursor.style.left=e.clientX+"px";
+cursor.style.top=e.clientY+"px";
+dot.style.left=e.clientX+"px";
+dot.style.top=e.clientY+"px";
+});
+</script>
+<script src="script.js"></script>
+<!-- ================= PROJECTS ================= -->
+<script type="module" src="projects.js"></script>
+</body>
+</html>
