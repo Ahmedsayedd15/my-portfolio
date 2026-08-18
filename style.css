@@ -76,7 +76,7 @@ body {
 .badge:hover{ transform:translateY(-3px); border-color:#38bdf8; box-shadow:0 10px 25px rgba(56,189,248,.12); }
 .info-widgets { display: grid; grid-template-columns: 1fr; gap: 12px; }
 .widget { background: var(--bg-card); border: 1px solid var(--border-color); padding: 14px 20px; border-radius: 6px; font-size: 0.9rem; display: flex; align-items: center; gap: 10px; }
-.widget-icon { font-size: 1.1rem; }
+.widget-icon { font-size: 1.1rem; color: #38bdf8; width: 20px; display: inline-flex; justify-content: center; }
 .contact-sub { color: var(--text-secondary); margin-top: -24px; margin-bottom: 40px; font-size: 1rem; }
 .contact-form { display: flex; flex-direction: column; gap: 12px; }
 .contact-form input, .contact-form textarea { background: var(--bg-card); border: 1px solid var(--border-color); padding: 14px; border-radius: 6px; color: var(--text-primary); font-family: var(--font-stack); font-size: 0.9rem; }
